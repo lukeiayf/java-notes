@@ -1,0 +1,17 @@
+- Array -> Native([])
+- Dynamic Arrays -> `new ArrayList<>()`
+- Linked List -> `new LinkedList<>()`
+- Stack -> `new Stack<>()`
+- Queue -> `new LinkedList<>()`
+- Priority Queue -> `new PriorityQueue<>()`
+- Deque ->  `new LinkedList<>()`
+- Associative Arrays:
+	- -> `new HashTable<>()`
+	- -> `new ConcurrentHashMap<>()`
+	- ->`new LinkedHashMap<>()`
+	- -> `new HashMap<>()`
+	- ->`new TreeMap<>()`
+- Sets:
+	- ->`new HashSet<>()`
+	- -> `new TreeSet<>()`
+- Graphs: There is no direct support for graph data structure in languages;

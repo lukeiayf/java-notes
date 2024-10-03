@@ -1,5 +1,0 @@
-- **Worse Case**
-- 
-- **Remove Constants**
-- **Different terms for inputs**
-- **Drop Non Dominants**

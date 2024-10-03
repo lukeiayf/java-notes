@@ -1,0 +1,3 @@
+- Readable
+- Speed(Time complexity)
+- Memory(Space complexity)

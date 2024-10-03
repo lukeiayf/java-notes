@@ -1,0 +1,11 @@
+- **Worse Case**
+	- Always assume worst case scenario when calculating BigO
+- **Remove Constants**
+	- O(2n) -> O(n)
+- **Different terms for inputs**
+	-  If there are more than one input they are factored in the BigO calculation
+	- O(m + n)
+	- O(m*n)
+- **Drop Non Dominants**
+	- Only keep the dominant term
+	- O(n + n²) -> O(n²)
