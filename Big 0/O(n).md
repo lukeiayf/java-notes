@@ -1,0 +1,3 @@
+- Linear space time complexity.
+- It increases proportionally to the amount of inputs.
+- The most common notation.
