@@ -1,3 +1,5 @@
+- [1,2,3]
+- Array lists are dynamic arrays in Java
 - lookup -> O(1)
 - push -> O(1)
 - insert -> O(n)
