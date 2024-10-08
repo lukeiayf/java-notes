@@ -1,0 +1,11 @@
+- v-for : for looping through elements
+	- v-for="item in items"
+- v-bind: for accessing dynamic attributes
+	- v-bind:src = "item.photo" 
+	- :src="item.photo"
+	- :class="product.active ? 'selected' : ' ' "
+	- :class="{selected : product.active}"
+- v-on: for manipulating events or properties
+	- v-on:click = "method or property handling"
+	- @click = "method or property handling"
+	

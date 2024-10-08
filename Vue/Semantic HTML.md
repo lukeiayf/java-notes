@@ -1,0 +1,2 @@
+- <template /> it's used as a container that is hidden from the user when the page loads
+- 
