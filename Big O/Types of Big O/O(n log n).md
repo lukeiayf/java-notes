@@ -1,0 +1,1 @@
+- Divide and Conquer algorithms are O(n log n)

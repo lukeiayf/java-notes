@@ -1,0 +1,4 @@
+- O(n)
+- Breadth is a noun denoting “the distance or measurement from side to side of something; width” or “wide range or extent”.
+- You traverse left -> right by level form the root node.
+- Each node is tracked in BFS so it uses memory.

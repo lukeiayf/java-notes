@@ -1,0 +1,6 @@
+- Useful for when the list is ALMOST sorted
+- Perform really well in small datasets
+- We start with second element of the array as first element in the array  assumed to be sorted.
+- Compare second element with the first element and check if the second element is smaller then swap them.
+- Move to the third element and compare it with the first two elements and put at its correct position
+- Repeat until the entire array is sorted.

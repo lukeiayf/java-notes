@@ -1,0 +1,5 @@
+- O(log n)
+- Use divide and conquer method
+- Needs the structure to be sorted
+- Divide the list in two based on the value of the number you need to find until you find it
+- Uses the binary tree format for perfomance

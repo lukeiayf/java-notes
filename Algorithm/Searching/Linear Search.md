@@ -1,0 +1,2 @@
+- O(n)
+- We have a list and we go one-by-one until we find the element we need to find.

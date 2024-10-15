@@ -1,0 +1,6 @@
+- If your data is small or almost sorted -> Insertion Sort
+- Educational purposes only -> Bubble Sort, Selection Sort
+- Worried about worst case scenarios -> Merge Sort
+- External sorting in an external process -> Merge Sort
+- If you are not worried about worst case -> Quick Sort
+- Overall Quick Sort sees the most implementation, but be aware of the worst case scenario

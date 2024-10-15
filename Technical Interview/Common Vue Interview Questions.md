@@ -234,7 +234,7 @@ There are a lot of approaches that can be made to handle large volumes of data o
 
 **Lazy Loading of Data**
 
-- Using debounce(wait until a set time to call the function) and throttle () for processing data that depends on user input ,such as search filters.
+- Using debounce(wait until a set time to call the function) and throttle for processing data that depends on user input ,such as search filters.
 
 **Web Workers for Heavy Computation**
 
@@ -247,3 +247,115 @@ There are a lot of approaches that can be made to handle large volumes of data o
 **Optimizing Re-renders**
  
  - Be mindful of reactivity and avoid unnecessary re-renders by properly using `watch`, `watchEffect`, and `computed` properties. Also, be careful with deeply reactive objects, and consider using shallow reactive state (`shallowRef`, `shallowReactive`) where appropriate.
+
+### **15. What is Webpack?**
+
+- It's a module bundler, used to put several .js files into a single one, parse them and bundle them. Based on that bundle optimizations can be applied depending on the use-case.
+- Tree-shaking is finding unused modules/imports and eliminating them to get the smallest bundle size.
+- In version 5 it is applied by default on building, but it can only work with static ES6 imports, so if you are using common.js for example it will not be caught in the tree-shake because the 'require' are basically functions executed at runtime.
+
+### 16. **What is a dependency graph?**
+
+ - It is a tree structure based on the entrypoint of our project that keeps track of all the modules and files in the project. It is used for the bundler to traverse and check for tree-shaking and optimization.
+
+### 17. **What is CSS in JS?**
+
+ - **CSS-in-JS** refers to a styling technique where CSS is written and applied within JavaScript code. Instead of keeping styles separate in `.css` files, CSS-in-JS allows developers to define and manage styles directly within their JavaScript or TypeScript code, typically at the component level.
+ - The main advantages are:
+	 - The styles are scoped by default
+	 - Allow dynamic styling based on props, states or context
+- Disavadvantages:
+	- You cannot cache the style since its inside the js
+	- It makes the js bundle bigger
+	- The classes names generated are hashes so it makes debugging harder
+ - For Vue a common css-in-js library is `vue-styles-components`
+```
+ <template>
+  <StyledButton :primary="true">Click Me</StyledButton>
+</template>
+
+<script setup>
+import styled from 'vue-styled-components';
+
+// Define the props for the styled component
+const buttonProps = {
+  primary: Boolean
+};
+
+// Create a styled button component
+const StyledButton = styled('button', buttonProps)`
+  background-color: ${(props) => (props.primary ? 'blue' : 'gray')};
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: ${(props) => (props.primary ? 'darkblue' : 'darkgray')};
+  }
+`;
+</script>
+
+```
+
+
+### 18. **What is FCP(First Contentful Paint)?**
+
+ - FCP stands for **First Contentful Paint**. It is a key performance metric in web development that measures the time it takes for the first piece of content to be rendered on the screen after a user navigates to a web page. This "content" can be text, images, or any other visible elements in the viewport.
+
+**How FCP is Measured:**
+
+- **FCP Timing**: It is recorded from the time the user initiates loading the page (e.g., by clicking a link) to the time the first content appears.
+- **Content Types**: The first content could be anything, such as text, an image, or even a background image.
+ 
+**Tools for Measuring FCP**:
+
+- **Google Lighthouse**: Audits your web page and reports FCP times.
+- **Chrome DevTools**: Provides a breakdown of different performance metrics including FCP.
+- **Web Vitals**: Google's tool that tracks important web performance metrics like FCP.
+
+**How to Improve FCP**:
+
+- **Optimize CSS and JavaScript**: Minimizing and deferring non-critical resources can help speed up the rendering of content.
+- **Lazy Loading**: Load images and other assets only when they are needed.
+- **Use a CDN**: Serving your content from a CDN ensures that the assets are delivered faster.
+- **Reduce Render-Blocking Resources**: Minimizing or deferring JavaScript and CSS that block rendering can speed up the FCP.
+
+### 19. **Differences in cookies, local and session storage**
+
+- Cookie -> up to 4kb and it is server and client side. You send the cookies through an HTPP reques.
+- Local Storage -> much higher storage and persist indeterminately, good for storing application state.
+- Session Storage -> same as Local but it is cleared when browser or window is closed
+### 20. **What are some frontend application optimizations?**
+
+- Bundler like vite or webpack
+- Most of the below is already taken care of by modern bundlers
+- Polyfill to check for language specific support for browsers and add vanilla js instead if its not supported
+- Compression with gzip
+- MInification and Uglyfication, removing new line and variables to minimize code size
+### 21. **How to handle and optimize big images?**
+- Set minimum dimension
+- Add compression and Image optimization libraries
+- Ship as WebP
+- Use Lazy Loading or load on scroll
+- Use srcSet to ship different images depending on device/viewport
+
+### 22. **What is a CDN?**
+- Content Delivery Network
+- A CDN distribution allows users to fetch assets from the closer edge location from them instead of the central node.
+- You can set CDN from AWS CloudFront
+### 23. **What are Micro Frontends?**
+- Microfrontends are an architectural style where a web application is divided into smaller, independently developed, deployed, and managed frontend components or "mini-applications." Each microfrontend represents a specific feature or section of the UI, often built with different frameworks or libraries, and they communicate with each other to form a cohesive app.
+- They are very complex and should be used when there are a lot of engineers working on a monolithic app
+### 24. **What is SSR in Vue and when would you use it?**
+- **Server-Side Rendering (SSR)** in Vue is when the HTML is rendered on the server before sending it to the client. It improves SEO, performance on slow connections, and user experience for large applications.
+- Vue supports SSR via **Nuxt.js** or Vue's official SSR package. You would use SSR when SEO is critical, or when you want to improve the time to first meaningful paint for large apps.
+
+### 24. **What is Closure?**
+-  When a function is declared inside another function, the inner function forms a closure.
+- The inner function has access to variables in three scopes:
+    1. **Its own local scope** (variables declared within the inner function)
+    2. **The outer function's scope** (variables declared within the outer function)
+    3. **The global scope** (variables declared globally)

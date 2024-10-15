@@ -1,0 +1,10 @@
+- O(n log n) Time Complexity
+- If the pivot was the first or last key in the sort it becomes O(n²) at worst case
+- O(n log n) Space Complexity
+- It works by determining a pivot in the list and comparing all that its lesser and bigger to it to create lists
+- All lesser go the left
+- All bigger go to the right
+- After that divide using the pivot
+- Do the same with the divided lists until they are all sorted
+- Merge all lists
+- VERY USEFUL AND FAST

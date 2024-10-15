@@ -1,0 +1,3 @@
+- O(n)
+- If you need to do operations on all data in a structure you need a traversal. Which means visiting every node.
+- Graph and Tree traversals use Depth First Search(DFS) or Breadth First Search(BFS)
