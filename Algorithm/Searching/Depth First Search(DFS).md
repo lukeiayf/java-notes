@@ -6,10 +6,16 @@
 - You have three ways of displaying a DFS
 ```
 //consider a tree
-//   101
-//33     105
+//      9  
+//   4      20  
+//1   6  15    170
 
-inOrder: 33,101,105
-preOrder: 101,33,105
-postOrder: 33,105,101
+//visits the node left->root->right
+inOrder: 1,4,6,9,15,20,170
+
+//visits the node root->left->right
+preOrder: 9,4,1,6,20,15,170
+
+//visits the node left->right->root
+postOrder: 1,6,4,15,170,20,9
 ```
