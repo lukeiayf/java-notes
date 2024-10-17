@@ -1,6 +1,6 @@
 - Composed of nodes, which have a value and a pointer, that points to other nodes
 - The first node is called HEAD, and the last on is TAIL
-- Fast insertions, you do  need to shift any items, just point to the next item
+- Fast insertions, you do not  need to shift any items, just point to the next item
 
 - prepend(add to the beginning) -> O(1)
 - append(add to the end ) -> O(1)

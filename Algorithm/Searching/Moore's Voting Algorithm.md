@@ -1,0 +1,2 @@
+- The intuition behind the Moore's Voting Algorithm is based on the fact that if there is a majority element in an array, it will always remain in the lead, even after encountering other elements.
+- Good for finding a majority or repeated elements in a list

@@ -1,3 +1,4 @@
+- Divide and Conquer
 - Very good
 - Very common in binary trees and binary search trees
 - A good image is looking through a phonebook
