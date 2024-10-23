@@ -1,22 +1,3 @@
-### **0.** **Difference between var, let and const**
-- `var` is function scoped, it is only available within the function it was declared in, or globally if declared outside of a function
-	- It **ignores block scope**, meaning variables declared with `var` inside a block (e.g., `if`, `for`) are accessible outside that block.
-	- Variables declared with `var` are **hoisted** to the top of their scope (function or global) but are initialized as `undefined`. This means you can reference a `var`-declared variable before its actual declaration, but its value will be `undefined`.
-	- The value of a `var`-declared variable can be reassigned.
-- `let` is block-scoped, which means it is confined to the block in which it was declared
-	- Like `var`, the value of a `let`-declared variable can be reassigned.
-- `const` is also block-scoped, but needs to be initialized at declaration
-	- Variables declared with `let` and `const` are also hoisted, but they are placed in a **"temporal dead zone"** until the code execution reaches their declaration. This means you cannot access them before they are declared.
-	- `const` creates **immutable references**. Once a value is assigned to a `const` variable, it cannot be reassigned.
-	- Although the reference is immutable, if the `const` holds an object or array, the contents of that object/array can still be mutated.
-Summary:
-
-- **`var`:**
-    - Function-scoped, hoisted, can be redeclared or reassigned.
-- **`let`:**
-    - Block-scoped, hoisted but not accessible before declaration, can be reassigned but not redeclared in the same scope.
-- **`const`:**
-    - Block-scoped, hoisted but not accessible before declaration, cannot be reassigned or redeclared, but properties of objects or arrays can be mutated.
 ### 1. **What is the Composition API in Vue 3, and how does it differ from the Options API?**
 
 **Answer:** The Composition API in Vue 3 is a new way to organize and structure code in Vue components. It allows developers to encapsulate logic into reusable functions, known as composables, rather than being tied to specific component options like `data`, `methods`, `computed`, etc., used in the Options API.
@@ -268,7 +249,7 @@ There are a lot of approaches that can be made to handle large volumes of data o
 	- You cannot cache the style since its inside the js
 	- It makes the js bundle bigger
 	- The classes names generated are hashes so it makes debugging harder
- - For Vue a common css-in-js library is `vue-styles-components`
+ - For Vue a common css-in-js library is `vue-styled-components`
 ```
  <template>
   <StyledButton :primary="true">Click Me</StyledButton>
@@ -325,7 +306,7 @@ const StyledButton = styled('button', buttonProps)`
 
 ### 19. **Differences in cookies, local and session storage**
 
-- Cookie -> up to 4kb and it is server and client side. You send the cookies through an HTPP reques.
+- Cookie -> up to 4kb and it is server and client side. You send the cookies through an HTTP request.
 - Local Storage -> much higher storage and persist indeterminately, good for storing application state.
 - Session Storage -> same as Local but it is cleared when browser or window is closed
 ### 20. **What are some frontend application optimizations?**
@@ -353,9 +334,3 @@ const StyledButton = styled('button', buttonProps)`
 - **Server-Side Rendering (SSR)** in Vue is when the HTML is rendered on the server before sending it to the client. It improves SEO, performance on slow connections, and user experience for large applications.
 - Vue supports SSR via **Nuxt.js** or Vue's official SSR package. You would use SSR when SEO is critical, or when you want to improve the time to first meaningful paint for large apps.
 
-### 24. **What is Closure?**
--  When a function is declared inside another function, the inner function forms a closure.
-- The inner function has access to variables in three scopes:
-    1. **Its own local scope** (variables declared within the inner function)
-    2. **The outer function's scope** (variables declared within the outer function)
-    3. **The global scope** (variables declared globally)
